@@ -1,0 +1,125 @@
+{
+  "testCases": [
+    {
+      "name": "High Risk - Sanctioned Individual",
+      "request": {
+        "entityType": "PERSON",
+        "name": "Viktor Bout",
+        "dateOfBirth": "1967-01-13",
+        "nationality": "Russian"
+      },
+      "expectedResponse": {
+        "entityId": "person:viktor_bout_1967_01_13",
+        "riskScore": 0.98,
+        "status": "REVIEW_REQUIRED",
+        "riskLevel": "CRITICAL",
+        "evidence": [
+          {
+            "source": "OFAC SDN List",
+            "match": "exact",
+            "severity": "critical"
+          }
+        ]
+      }
+    },
+    {
+      "name": "High Risk - Sanctioned Company",
+      "request": {
+        "entityType": "COMPANY",
+        "name": "Acme Trading Corporation",
+        "registrationNumber": "12345678",
+        "jurisdiction": "British Virgin Islands"
+      },
+      "expectedResponse": {
+        "entityId": "company:acme_trading_corporation_bvi_12345678",
+        "riskScore": 0.85,
+        "status": "REVIEW_REQUIRED",
+        "riskLevel": "HIGH",
+        "evidence": [
+          {
+            "source": "OFAC SDN List",
+            "match": "exact",
+            "severity": "critical"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Medium Risk - Adverse Media",
+      "request": {
+        "entityType": "PERSON",
+        "name": "John Smith",
+        "dateOfBirth": "1980-05-15",
+        "country": "US"
+      },
+      "expectedResponse": {
+        "entityId": "person:john_smith_1980_05_15_us",
+        "riskScore": 0.62,
+        "status": "REVIEW_REQUIRED",
+        "riskLevel": "MEDIUM",
+        "evidence": [
+          {
+            "source": "Adverse Media",
+            "match": "contextual",
+            "severity": "high"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Medium Risk - PEP",
+      "request": {
+        "entityType": "PERSON",
+        "name": "Maria Garcia",
+        "dateOfBirth": "1975-08-22",
+        "country": "Mexico"
+      },
+      "expectedResponse": {
+        "entityId": "person:maria_garcia_1975_08_22_mx_pep",
+        "riskScore": 0.45,
+        "status": "REVIEW_REQUIRED",
+        "riskLevel": "MEDIUM",
+        "evidence": [
+          {
+            "source": "PEP Database",
+            "match": "exact",
+            "severity": "medium"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Low Risk - Clean Record",
+      "request": {
+        "entityType": "PERSON",
+        "name": "Alice Johnson",
+        "dateOfBirth": "1990-06-20",
+        "country": "Canada"
+      },
+      "expectedResponse": {
+        "entityId": "person:alice_johnson_1990_06_20_ca",
+        "riskScore": 0.05,
+        "status": "CLEAR",
+        "riskLevel": "LOW",
+        "evidence": []
+      }
+    },
+    {
+      "name": "False Positive Test - Common Name",
+      "request": {
+        "entityType": "PERSON",
+        "name": "John Smith",
+        "dateOfBirth": "1995-12-01",
+        "country": "UK"
+      },
+      "expectedResponse": {
+        "entityId": "person:john_smith_1995_12_01_uk",
+        "riskScore": 0.08,
+        "status": "CLEAR",
+        "riskLevel": "LOW",
+        "evidence": [],
+        "disambiguationNotes": "Different person - DOB and location do not match adverse media subject"
+      }
+    }
+  ]
+}

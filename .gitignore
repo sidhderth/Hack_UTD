@@ -1,0 +1,36 @@
+# CDK
+infrastructure/node_modules/
+infrastructure/cdk.out/
+infrastructure/*.js
+infrastructure/*.d.ts
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# AWS
+.aws/
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db

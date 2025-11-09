@@ -1,0 +1,369 @@
+{
+  "statusCode": 200,
+  "riskProfiles": [
+    {
+      "entityId": "person:viktor_bout_1967_01_13",
+      "entityName": "Viktor Anatolyevich Bout",
+      "riskScore": 0.98,
+      "status": "REVIEW_REQUIRED",
+      "riskLevel": "CRITICAL",
+      "confidence": 0.95,
+      "riskBreakdown": {
+        "sanctionsRisk": 1.0,
+        "pepRisk": 0.0,
+        "adverseMediaRisk": 0.95,
+        "criminalRecordRisk": 1.0,
+        "jurisdictionRisk": 0.85,
+        "associationRisk": 0.90
+      },
+      "evidence": [
+        {
+          "source": "OFAC SDN List",
+          "match": "exact",
+          "confidence": 1.0,
+          "severity": "critical",
+          "description": "Listed on OFAC Specially Designated Nationals list",
+          "program": "SDGT - Specially Designated Global Terrorist",
+          "dateAdded": "2008-03-06",
+          "details": "Arms trafficking, money laundering, support for terrorism"
+        },
+        {
+          "source": "UN Security Council Sanctions",
+          "match": "exact",
+          "confidence": 0.98,
+          "severity": "critical",
+          "description": "UN sanctions for arms trafficking",
+          "resolution": "UNSCR 1267",
+          "dateAdded": "2008-03-15"
+        },
+        {
+          "source": "Adverse Media",
+          "match": "contextual",
+          "confidence": 0.95,
+          "severity": "high",
+          "description": "Convicted of conspiracy to kill US nationals and officials",
+          "articles": 150,
+          "sentiment": "negative",
+          "recentArticles": [
+            {
+              "title": "Arms Dealer Viktor Bout Released in Prisoner Swap",
+              "date": "2022-12-08",
+              "source": "BBC News"
+            }
+          ]
+        },
+        {
+          "source": "Criminal Records",
+          "match": "exact",
+          "confidence": 1.0,
+          "severity": "critical",
+          "description": "Convicted in US Federal Court",
+          "court": "Southern District of New York",
+          "caseNumber": "08-CR-365",
+          "verdict": "Guilty",
+          "sentence": "25 years imprisonment",
+          "releaseDate": "2022-12-08"
+        }
+      ],
+      "recommendations": [
+        "REJECT - Do not onboard or transact",
+        "Enhanced due diligence required",
+        "Report to compliance officer immediately",
+        "Consider filing SAR (Suspicious Activity Report)"
+      ],
+      "metadata": {
+        "processedAt": "2025-11-08T12:05:00Z",
+        "modelVersion": "risk-classifier-v2.1",
+        "disambiguationScore": 0.95
+      }
+    },
+    {
+      "entityId": "company:acme_trading_corporation_bvi_12345678",
+      "entityName": "Acme Trading Corporation",
+      "riskScore": 0.85,
+      "status": "REVIEW_REQUIRED",
+      "riskLevel": "HIGH",
+      "confidence": 0.88,
+      "riskBreakdown": {
+        "sanctionsRisk": 0.95,
+        "pepRisk": 0.0,
+        "adverseMediaRisk": 0.70,
+        "criminalRecordRisk": 0.0,
+        "jurisdictionRisk": 0.95,
+        "associationRisk": 0.80,
+        "corporateStructureRisk": 0.90
+      },
+      "evidence": [
+        {
+          "source": "OFAC SDN List",
+          "match": "exact",
+          "confidence": 0.95,
+          "severity": "critical",
+          "description": "Listed for sanctions evasion",
+          "program": "UKRAINE-EO13662",
+          "dateAdded": "2025-11-03",
+          "details": "Shell company used to evade Ukraine-related sanctions"
+        },
+        {
+          "source": "Jurisdiction Risk",
+          "match": "analytical",
+          "confidence": 0.95,
+          "severity": "high",
+          "description": "Registered in high-risk jurisdiction",
+          "jurisdiction": "British Virgin Islands",
+          "riskFactors": [
+            "Secrecy jurisdiction",
+            "Limited beneficial ownership transparency",
+            "Common for shell companies"
+          ]
+        },
+        {
+          "source": "Corporate Structure Analysis",
+          "match": "analytical",
+          "confidence": 0.90,
+          "severity": "high",
+          "description": "Red flags in corporate structure",
+          "findings": [
+            "No identifiable beneficial owner",
+            "Nominee directors",
+            "Recent incorporation (2018)",
+            "No apparent business operations",
+            "Minimal online presence"
+          ]
+        },
+        {
+          "source": "Adverse Media",
+          "match": "contextual",
+          "confidence": 0.70,
+          "severity": "medium",
+          "description": "Mentioned in sanctions evasion investigations",
+          "articles": 12,
+          "sentiment": "negative"
+        }
+      ],
+      "recommendations": [
+        "REJECT - High sanctions risk",
+        "Enhanced due diligence required",
+        "Verify beneficial ownership",
+        "Check for sanctions nexus"
+      ],
+      "metadata": {
+        "processedAt": "2025-11-08T12:05:15Z",
+        "modelVersion": "risk-classifier-v2.1",
+        "disambiguationScore": 0.88
+      }
+    },
+    {
+      "entityId": "person:john_smith_1980_05_15_us",
+      "entityName": "John Andrew Smith",
+      "riskScore": 0.62,
+      "status": "REVIEW_REQUIRED",
+      "riskLevel": "MEDIUM",
+      "confidence": 0.72,
+      "riskBreakdown": {
+        "sanctionsRisk": 0.0,
+        "pepRisk": 0.0,
+        "adverseMediaRisk": 0.85,
+        "criminalRecordRisk": 0.60,
+        "jurisdictionRisk": 0.10,
+        "associationRisk": 0.0
+      },
+      "evidence": [
+        {
+          "source": "Adverse Media",
+          "match": "contextual",
+          "confidence": 0.85,
+          "severity": "high",
+          "description": "Accused of fraud in federal investigation",
+          "articles": 25,
+          "sentiment": "negative",
+          "recentArticles": [
+            {
+              "title": "CEO Accused of Fraud in $50M Scheme",
+              "date": "2025-11-01",
+              "source": "Financial Times",
+              "excerpt": "Federal prosecutors allege orchestrated complex fraud scheme"
+            },
+            {
+              "title": "Smith Denies All Charges",
+              "date": "2025-11-02",
+              "source": "Reuters",
+              "excerpt": "Through his attorney, Smith maintains his innocence"
+            }
+          ]
+        },
+        {
+          "source": "Legal Proceedings",
+          "match": "pending",
+          "confidence": 0.60,
+          "severity": "medium",
+          "description": "Federal investigation ongoing",
+          "status": "Under Investigation",
+          "charges": "Alleged fraud (not yet filed)",
+          "details": "Presumption of innocence applies"
+        }
+      ],
+      "recommendations": [
+        "ENHANCED DUE DILIGENCE - Monitor closely",
+        "Await outcome of investigation",
+        "Consider risk appetite for reputational risk",
+        "Document decision rationale"
+      ],
+      "caveats": [
+        "Allegations only - no conviction",
+        "Common name - disambiguation confidence 72%",
+        "Presumption of innocence applies",
+        "Reputational risk vs legal risk"
+      ],
+      "metadata": {
+        "processedAt": "2025-11-08T12:05:30Z",
+        "modelVersion": "risk-classifier-v2.1",
+        "disambiguationScore": 0.72
+      }
+    },
+    {
+      "entityId": "person:maria_garcia_1975_08_22_mx_pep",
+      "entityName": "Maria Guadalupe Garcia Rodriguez",
+      "riskScore": 0.45,
+      "status": "REVIEW_REQUIRED",
+      "riskLevel": "MEDIUM",
+      "confidence": 0.91,
+      "riskBreakdown": {
+        "sanctionsRisk": 0.0,
+        "pepRisk": 0.95,
+        "adverseMediaRisk": 0.15,
+        "criminalRecordRisk": 0.0,
+        "jurisdictionRisk": 0.30,
+        "associationRisk": 0.20
+      },
+      "evidence": [
+        {
+          "source": "PEP Database",
+          "match": "exact",
+          "confidence": 0.95,
+          "severity": "medium",
+          "description": "Senior Politically Exposed Person",
+          "position": "Minister of Finance",
+          "country": "Mexico",
+          "pepLevel": "Level 1 - Senior Political Figure",
+          "startDate": "2020-01-01",
+          "status": "Active"
+        },
+        {
+          "source": "Family Connections",
+          "match": "analytical",
+          "confidence": 0.80,
+          "severity": "low",
+          "description": "Spouse has business interests",
+          "details": "Carlos Garcia - Business Owner (construction sector)",
+          "potentialConflict": "Government contracts in construction"
+        },
+        {
+          "source": "Adverse Media",
+          "match": "contextual",
+          "confidence": 0.15,
+          "severity": "low",
+          "description": "Routine political coverage",
+          "articles": 500,
+          "sentiment": "neutral",
+          "details": "No significant negative coverage"
+        }
+      ],
+      "recommendations": [
+        "ENHANCED DUE DILIGENCE - PEP procedures required",
+        "Source of wealth verification",
+        "Source of funds verification",
+        "Ongoing monitoring required",
+        "Senior management approval needed"
+      ],
+      "pepDetails": {
+        "riskRating": "Medium",
+        "rationale": "Senior government position with financial oversight",
+        "mitigatingFactors": [
+          "No adverse media",
+          "No corruption allegations",
+          "Transparent government role"
+        ],
+        "aggravatingFactors": [
+          "Control over government finances",
+          "Spouse's business interests",
+          "Jurisdiction corruption perception index: 124/180"
+        ]
+      },
+      "metadata": {
+        "processedAt": "2025-11-08T12:05:45Z",
+        "modelVersion": "risk-classifier-v2.1",
+        "disambiguationScore": 0.91
+      }
+    },
+    {
+      "entityId": "person:jane_doe_1985_03_10_uk",
+      "entityName": "Jane Elizabeth Doe",
+      "riskScore": 0.55,
+      "status": "REVIEW_REQUIRED",
+      "riskLevel": "MEDIUM",
+      "confidence": 0.68,
+      "riskBreakdown": {
+        "sanctionsRisk": 0.0,
+        "pepRisk": 0.0,
+        "adverseMediaRisk": 0.40,
+        "criminalRecordRisk": 0.75,
+        "jurisdictionRisk": 0.05,
+        "associationRisk": 0.0
+      },
+      "evidence": [
+        {
+          "source": "Court Records",
+          "match": "exact",
+          "confidence": 0.95,
+          "severity": "high",
+          "description": "Pending criminal charges",
+          "court": "Southern District of New York",
+          "caseNumber": "CR-2025-12345",
+          "charges": ["Money Laundering", "Wire Fraud"],
+          "status": "Pending Trial",
+          "filingDate": "2025-10-15",
+          "trialDate": "2026-03-15"
+        },
+        {
+          "source": "Adverse Media",
+          "match": "contextual",
+          "confidence": 0.40,
+          "severity": "medium",
+          "description": "Limited media coverage of charges",
+          "articles": 8,
+          "sentiment": "negative"
+        }
+      ],
+      "recommendations": [
+        "ENHANCED DUE DILIGENCE - Pending criminal charges",
+        "Await trial outcome",
+        "Consider risk appetite",
+        "Document decision rationale"
+      ],
+      "caveats": [
+        "Charges pending - no conviction",
+        "Presumption of innocence applies",
+        "Common name - disambiguation confidence 68%",
+        "Monitor case developments"
+      ],
+      "metadata": {
+        "processedAt": "2025-11-08T12:06:00Z",
+        "modelVersion": "risk-classifier-v2.1",
+        "disambiguationScore": 0.68
+      }
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "critical": 1,
+    "high": 1,
+    "medium": 3,
+    "low": 0,
+    "clear": 0,
+    "reviewRequired": 5,
+    "avgRiskScore": 0.69,
+    "avgConfidence": 0.83,
+    "processingTime": "45.2 seconds"
+  }
+}

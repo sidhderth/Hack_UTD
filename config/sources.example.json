@@ -1,0 +1,129 @@
+{
+  "sources": [
+    {
+      "name": "ofac_sdn",
+      "url": "https://sanctionslist.ofac.treas.gov/Home/SdnList",
+      "type": "sanctions_list",
+      "enabled": true,
+      "schedule": "0 3 * * 1",
+      "scrapeMode": "incremental",
+      "lookbackDays": 14,
+      "selectors": {
+        "entry_selector": ".sanction-entry",
+        "name": ".entity-name",
+        "type": ".entity-type",
+        "date_added": ".date-added",
+        "next_button": ".pagination-next"
+      },
+      "authentication": {
+        "type": "none"
+      }
+    },
+    {
+      "name": "un_sanctions",
+      "url": "https://www.un.org/securitycouncil/content/un-sc-consolidated-list",
+      "type": "sanctions_list",
+      "enabled": true,
+      "schedule": "0 4 1 * *",
+      "scrapeMode": "incremental",
+      "lookbackDays": 30,
+      "selectors": {
+        "entry_selector": ".consolidated-list-entry",
+        "name": ".name",
+        "type": ".listing-type",
+        "date_added": ".date-designated"
+      },
+      "authentication": {
+        "type": "none"
+      }
+    },
+    {
+      "name": "google_news_adverse_media",
+      "url": "https://news.google.com/search",
+      "type": "adverse_media",
+      "enabled": true,
+      "schedule": "0 2 * * *",
+      "scrapeMode": "incremental",
+      "lookbackDays": 7,
+      "searchTerms": [
+        "fraud",
+        "money laundering",
+        "corruption",
+        "sanctions violation",
+        "financial crime"
+      ],
+      "selectors": {
+        "article_selector": ".article",
+        "title": ".article-title",
+        "date": ".article-date",
+        "content": ".article-snippet",
+        "url": "a[href]"
+      },
+      "authentication": {
+        "type": "none"
+      }
+    },
+    {
+      "name": "world_check_api",
+      "url": "https://api.refinitiv.com/world-check/v2",
+      "type": "pep_database",
+      "enabled": false,
+      "schedule": "0 5 1 * *",
+      "scrapeMode": "incremental",
+      "lookbackDays": 30,
+      "authentication": {
+        "type": "api_key",
+        "secretName": "aegis/sources/world-check-api-key"
+      },
+      "apiConfig": {
+        "endpoint": "/cases/screeningRequest",
+        "method": "POST",
+        "rateLimit": 100
+      }
+    },
+    {
+      "name": "sec_edgar",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar",
+      "type": "regulatory_filings",
+      "enabled": true,
+      "schedule": "0 6 * * *",
+      "scrapeMode": "incremental",
+      "lookbackDays": 7,
+      "selectors": {
+        "filing_selector": ".filing-row",
+        "company": ".company-name",
+        "form_type": ".form-type",
+        "date": ".filing-date"
+      },
+      "authentication": {
+        "type": "none"
+      }
+    },
+    {
+      "name": "interpol_red_notices",
+      "url": "https://www.interpol.int/en/How-we-work/Notices/Red-Notices",
+      "type": "watchlist",
+      "enabled": true,
+      "schedule": "0 7 * * 0",
+      "scrapeMode": "incremental",
+      "lookbackDays": 14,
+      "selectors": {
+        "notice_selector": ".notice-item",
+        "name": ".notice-name",
+        "nationality": ".notice-nationality",
+        "date_issued": ".notice-date"
+      },
+      "authentication": {
+        "type": "none"
+      }
+    }
+  ],
+  "globalSettings": {
+    "userAgent": "AEGIS Risk Intelligence Bot/1.0 (compliance@example.com)",
+    "respectRobotsTxt": true,
+    "maxConcurrentScrapes": 5,
+    "defaultTimeout": 30,
+    "retryAttempts": 3,
+    "proxyRotation": false
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "statusCode": 200,
+  "bucket": "aegis-processed-dev-123456789012",
+  "key": "ner/2025/11/08/ofac_sdn_120000.json",
+  "entities": [
+    {
+      "text": "Viktor Bout",
+      "type": "PERSON",
+      "score": 0.98,
+      "start": 0,
+      "end": 11
+    },
+    {
+      "text": "Dushanbe",
+      "type": "LOCATION",
+      "score": 0.95,
+      "start": 50,
+      "end": 58
+    },
+    {
+      "text": "Tajikistan",
+      "type": "LOCATION",
+      "score": 0.96,
+      "start": 60,
+      "end": 70
+    },
+    {
+      "text": "Acme Trading Corporation",
+      "type": "ORGANIZATION",
+      "score": 0.97,
+      "start": 100,
+      "end": 124
+    },
+    {
+      "text": "British Virgin Islands",
+      "type": "LOCATION",
+      "score": 0.94,
+      "start": 150,
+      "end": 172
+    },
+    {
+      "text": "John Smith",
+      "type": "PERSON",
+      "score": 0.92,
+      "start": 200,
+      "end": 210
+    },
+    {
+      "text": "Financial Times",
+      "type": "ORGANIZATION",
+      "score": 0.89,
+      "start": 250,
+      "end": 265
+    },
+    {
+      "text": "Maria Garcia",
+      "type": "PERSON",
+      "score": 0.96,
+      "start": 300,
+      "end": 312
+    },
+    {
+      "text": "Mexico",
+      "type": "LOCATION",
+      "score": 0.98,
+      "start": 350,
+      "end": 356
+    },
+    {
+      "text": "Jane Doe",
+      "type": "PERSON",
+      "score": 0.91,
+      "start": 400,
+      "end": 408
+    },
+    {
+      "text": "Southern District of New York",
+      "type": "ORGANIZATION",
+      "score": 0.93,
+      "start": 450,
+      "end": 479
+    }
+  ]
+}

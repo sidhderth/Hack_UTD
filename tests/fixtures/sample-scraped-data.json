@@ -1,0 +1,106 @@
+{
+  "source": "ofac_sdn",
+  "sourceType": "sanctions_list",
+  "scrapedAt": "2025-11-08T12:00:00Z",
+  "dateRange": {
+    "start": "2025-11-01T00:00:00Z",
+    "end": "2025-11-08T00:00:00Z"
+  },
+  "recordCount": 5,
+  "records": [
+    {
+      "name": "Viktor Bout",
+      "entityType": "PERSON",
+      "dateAdded": "2025-11-05T00:00:00Z",
+      "source": "sanctions_list",
+      "aliases": ["Victor Bout", "Viktor Anatolyevich Bout", "Vadim Markovich Aminov"],
+      "metadata": {
+        "dateOfBirth": "1967-01-13",
+        "placeOfBirth": "Dushanbe, Tajikistan",
+        "nationality": "Russian",
+        "program": "SDGT",
+        "remarks": "Arms trafficking, money laundering"
+      }
+    },
+    {
+      "name": "Acme Trading Corporation",
+      "entityType": "COMPANY",
+      "dateAdded": "2025-11-03T00:00:00Z",
+      "source": "sanctions_list",
+      "aliases": ["Acme Corp", "ACME Trading Ltd"],
+      "metadata": {
+        "registrationNumber": "12345678",
+        "jurisdiction": "British Virgin Islands",
+        "program": "UKRAINE-EO13662",
+        "remarks": "Shell company used for sanctions evasion"
+      }
+    },
+    {
+      "name": "John Smith",
+      "entityType": "PERSON",
+      "dateAdded": "2025-11-02T00:00:00Z",
+      "source": "adverse_media",
+      "aliases": ["J. Smith", "John A. Smith"],
+      "metadata": {
+        "dateOfBirth": "1980-05-15",
+        "nationality": "American",
+        "occupation": "Business Executive",
+        "articles": [
+          {
+            "title": "CEO Accused of Fraud in $50M Scheme",
+            "date": "2025-11-01",
+            "source": "Financial Times",
+            "sentiment": "negative",
+            "excerpt": "Federal prosecutors allege John Smith orchestrated a complex fraud scheme..."
+          },
+          {
+            "title": "Smith Denies All Charges",
+            "date": "2025-11-02",
+            "source": "Reuters",
+            "sentiment": "neutral",
+            "excerpt": "Through his attorney, Smith maintains his innocence..."
+          }
+        ]
+      }
+    },
+    {
+      "name": "Maria Garcia",
+      "entityType": "PERSON",
+      "dateAdded": "2025-11-04T00:00:00Z",
+      "source": "pep_database",
+      "aliases": ["Maria G. Rodriguez", "M. Garcia"],
+      "metadata": {
+        "dateOfBirth": "1975-08-22",
+        "nationality": "Mexican",
+        "position": "Minister of Finance",
+        "country": "Mexico",
+        "pepLevel": "Level 1 - Senior Political Figure",
+        "startDate": "2020-01-01",
+        "endDate": null,
+        "familyMembers": [
+          {
+            "name": "Carlos Garcia",
+            "relationship": "Spouse",
+            "occupation": "Business Owner"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Jane Doe",
+      "entityType": "PERSON",
+      "dateAdded": "2025-11-06T00:00:00Z",
+      "source": "court_records",
+      "aliases": [],
+      "metadata": {
+        "dateOfBirth": "1985-03-10",
+        "nationality": "British",
+        "caseNumber": "CR-2025-12345",
+        "court": "Southern District of New York",
+        "charges": ["Money Laundering", "Wire Fraud"],
+        "status": "Pending Trial",
+        "filingDate": "2025-10-15"
+      }
+    }
+  ]
+}

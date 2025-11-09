@@ -1,0 +1,151 @@
+{
+  "statusCode": 200,
+  "bucket": "aegis-processed-dev-123456789012",
+  "key": "resolved/2025/11/08/ofac_sdn_120000.json",
+  "resolvedEntities": [
+    {
+      "originalText": "Viktor Bout",
+      "canonicalId": "person:viktor_bout_1967_01_13",
+      "canonicalName": "Viktor Anatolyevich Bout",
+      "type": "PERSON",
+      "disambiguationScore": 0.95,
+      "aliases": [
+        "Victor Bout",
+        "Viktor Bout",
+        "Vadim Markovich Aminov",
+        "Viktor Budd",
+        "Viktor Butt"
+      ],
+      "metadata": {
+        "dateOfBirth": "1967-01-13",
+        "placeOfBirth": "Dushanbe, Tajikistan",
+        "nationality": "Russian",
+        "knownAssociates": ["Sergei Bout", "Alla Bout"],
+        "businessInterests": ["Aviation", "Arms Trading"],
+        "jurisdictions": ["Russia", "UAE", "Thailand"]
+      },
+      "confidence": {
+        "nameMatch": 0.98,
+        "dobMatch": 1.0,
+        "locationMatch": 0.92,
+        "aliasMatch": 0.95,
+        "overall": 0.95
+      }
+    },
+    {
+      "originalText": "Acme Trading Corporation",
+      "canonicalId": "company:acme_trading_corporation_bvi_12345678",
+      "canonicalName": "Acme Trading Corporation",
+      "type": "ORGANIZATION",
+      "disambiguationScore": 0.88,
+      "aliases": [
+        "Acme Corp",
+        "ACME Trading Ltd",
+        "Acme International"
+      ],
+      "metadata": {
+        "registrationNumber": "12345678",
+        "jurisdiction": "British Virgin Islands",
+        "incorporationDate": "2018-03-15",
+        "directors": ["Unknown"],
+        "ultimateBeneficialOwner": "Unknown",
+        "businessType": "Trading Company"
+      },
+      "confidence": {
+        "nameMatch": 0.90,
+        "registrationMatch": 1.0,
+        "jurisdictionMatch": 1.0,
+        "overall": 0.88
+      }
+    },
+    {
+      "originalText": "John Smith",
+      "canonicalId": "person:john_smith_1980_05_15_us",
+      "canonicalName": "John Andrew Smith",
+      "type": "PERSON",
+      "disambiguationScore": 0.72,
+      "aliases": [
+        "John Smith",
+        "J. Smith",
+        "John A. Smith",
+        "Johnny Smith"
+      ],
+      "metadata": {
+        "dateOfBirth": "1980-05-15",
+        "nationality": "American",
+        "occupation": "Business Executive",
+        "company": "TechCorp Inc",
+        "location": "New York, NY"
+      },
+      "confidence": {
+        "nameMatch": 0.65,
+        "dobMatch": 0.85,
+        "locationMatch": 0.70,
+        "contextMatch": 0.75,
+        "overall": 0.72
+      },
+      "disambiguationNotes": "Common name - disambiguation based on DOB, location, and adverse media context"
+    },
+    {
+      "originalText": "Maria Garcia",
+      "canonicalId": "person:maria_garcia_1975_08_22_mx_pep",
+      "canonicalName": "Maria Guadalupe Garcia Rodriguez",
+      "type": "PERSON",
+      "disambiguationScore": 0.91,
+      "aliases": [
+        "Maria Garcia",
+        "Maria G. Rodriguez",
+        "M. Garcia",
+        "Ministra Garcia"
+      ],
+      "metadata": {
+        "dateOfBirth": "1975-08-22",
+        "nationality": "Mexican",
+        "position": "Minister of Finance",
+        "country": "Mexico",
+        "pepLevel": "Level 1",
+        "politicalParty": "PRI",
+        "termStart": "2020-01-01"
+      },
+      "confidence": {
+        "nameMatch": 0.88,
+        "dobMatch": 1.0,
+        "positionMatch": 1.0,
+        "overall": 0.91
+      }
+    },
+    {
+      "originalText": "Jane Doe",
+      "canonicalId": "person:jane_doe_1985_03_10_uk",
+      "canonicalName": "Jane Elizabeth Doe",
+      "type": "PERSON",
+      "disambiguationScore": 0.68,
+      "aliases": [
+        "Jane Doe",
+        "J. Doe"
+      ],
+      "metadata": {
+        "dateOfBirth": "1985-03-10",
+        "nationality": "British",
+        "caseNumber": "CR-2025-12345",
+        "charges": ["Money Laundering", "Wire Fraud"]
+      },
+      "confidence": {
+        "nameMatch": 0.60,
+        "dobMatch": 0.80,
+        "courtRecordMatch": 0.95,
+        "overall": 0.68
+      },
+      "disambiguationNotes": "Common placeholder name - high confidence due to specific court case match"
+    }
+  ],
+  "falsePositiveReduction": {
+    "originalCount": 11,
+    "resolvedCount": 5,
+    "deduplicationRate": 0.55,
+    "avgDisambiguationScore": 0.83,
+    "highConfidenceEntities": 3,
+    "mediumConfidenceEntities": 2,
+    "lowConfidenceEntities": 0
+  }
+}
