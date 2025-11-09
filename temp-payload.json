@@ -1,0 +1,11 @@
+﻿{
+    "sources":  [
+                    {
+                        "url":  "https://example.com",
+                        "name":  "test",
+                        "type":  "generic"
+                    }
+                ],
+    "lookbackDays":  7,
+    "scrapeMode":  "incremental"
+}

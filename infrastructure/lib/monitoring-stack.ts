@@ -28,11 +28,7 @@ export class MonitoringStack extends cdk.Stack {
       encryption: s3.BucketEncryption.S3_MANAGED,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       versioned: true,
-      objectLockEnabled: true,
-      objectLockDefaultRetention: {
-        mode: s3.ObjectLockRetentionMode.GOVERNANCE,
-        duration: cdk.Duration.days(365)
-      },
+      objectLockEnabled: false, // Simplified for initial deployment
       lifecycleRules: [
         {
           id: 'ArchiveOldLogs',
@@ -137,7 +133,7 @@ export class MonitoringStack extends cdk.Stack {
       findingPublishingFrequency: 'FIFTEEN_MINUTES'
     });
 
-    new cdk.CfnOutput(this, 'CloudTrailBucket', { value: trailBucket.bucketName });
+    new cdk.CfnOutput(this, 'CloudTrailBucketName', { value: trailBucket.bucketName });
     new cdk.CfnOutput(this, 'AlertTopicArn', { value: alertTopic.topicArn });
   }
 }

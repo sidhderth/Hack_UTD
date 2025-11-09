@@ -5,7 +5,7 @@ import { NetworkStack } from '../lib/network-stack';
 import { SecurityStack } from '../lib/security-stack';
 import { DataStack } from '../lib/data-stack';
 import { ComputeStack } from '../lib/compute-stack';
-import { PipelineStack } from '../lib/pipeline-stack';
+import { PipelineStackComprehend } from '../lib/pipeline-stack-comprehend';
 import { ApiStack } from '../lib/api-stack';
 import { MonitoringStack } from '../lib/monitoring-stack';
 
@@ -55,8 +55,8 @@ const computeStack = new ComputeStack(app, `Aegis-Compute-${env}`, {
   kmsKey: securityStack.dataKmsKey
 });
 
-// 4b. NLP Pipeline (Step Functions + SageMaker)
-const pipelineStack = new PipelineStack(app, `Aegis-Pipeline-${env}`, {
+// 4b. NLP Pipeline (Step Functions + AWS Comprehend - no SageMaker quota needed!)
+const pipelineStack = new PipelineStackComprehend(app, `Aegis-Pipeline-${env}`, {
   ...stackProps,
   environment: env,
   vpc: networkStack.vpc,

@@ -11,9 +11,9 @@ import time
 from datetime import datetime
 
 # Configuration
-API_URL = "https://your-api-id.execute-api.us-east-1.amazonaws.com/dev"
-S3_BUCKET_RAW = "aegis-raw-data-dev-123456789012"
-S3_BUCKET_PROCESSED = "aegis-processed-dev-123456789012"
+API_URL = "https://0khhmki0e0.execute-api.us-east-1.amazonaws.com/dev"
+S3_BUCKET_RAW = "aegis-raw-data-dev-968668792715"
+S3_BUCKET_PROCESSED = "aegis-processed-dev-968668792715"
 DYNAMODB_TABLE = "aegis-risk-profiles-dev"
 
 # AWS clients
